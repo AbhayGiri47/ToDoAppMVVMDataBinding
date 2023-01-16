@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ToDo App</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="save">Save</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="time">Time</string>
+    <string name="last_updated">Last Updated : %1$s </string>
+
+</resources>
