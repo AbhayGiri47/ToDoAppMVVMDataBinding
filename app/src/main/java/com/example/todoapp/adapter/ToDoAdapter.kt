@@ -7,7 +7,11 @@ import com.example.todoapp.R
 import com.example.todoapp.databinding.RowItemRecyclerViewBinding
 import com.example.todoapp.db.ToDoList
 // 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
-class ToDoAdapter(val deleteListener: (ToDoList) -> Unit, val editListener: (ToDoList) -> Unit) :
+class ToDoAdapter(
+    val deleteListener: (ToDoList) -> Unit,
+    val editListener: (ToDoList) -> Unit,
+    val onItemClick: (ToDoList) -> Unit
+) :
     RecyclerView.Adapter<ToDoAdapter.ViewHolder>() {
 
     var list = ArrayList<ToDoList>()
@@ -36,6 +40,10 @@ class ToDoAdapter(val deleteListener: (ToDoList) -> Unit, val editListener: (ToD
         holder.btnEdit.setOnClickListener {
             editListener(list[position])
         }
+        holder.cardView.setOnClickListener {
+            onItemClick(list[position])
+        }
+
 
     }
 
@@ -49,6 +57,7 @@ class ToDoAdapter(val deleteListener: (ToDoList) -> Unit, val editListener: (ToD
         val time = binding.tvTime
         val btnEdit = binding.ivEdit
         val btnDelete = binding.ivDelete
+        val cardView = binding.clMain
     }
 
     fun addToList(todoList: List<ToDoList>) {

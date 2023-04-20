@@ -36,6 +36,10 @@ class ToDoViewModel(application: Application) : AndroidViewModel(application) {
         repository.deleteList(list)
     }
 
+    fun deleteAllList() =viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteAllList()
+    }
+
     fun clearText(){
         title.postValue("")
         description.postValue("")

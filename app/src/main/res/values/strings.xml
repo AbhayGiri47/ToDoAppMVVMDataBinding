@@ -8,4 +8,11 @@
     <string name="time">Time</string>
     <string name="last_updated">Last Updated : %1$s </string>
 
+    <!--  BottomSheet Dialog !-->
+    <string name="close">Close</string>
+    <string name="titlebottomsheet">Title : %1$s</string>
+    <string name="descriptionbottomsheet">Description : %1$s</string>
+
+
+
 </resources>
