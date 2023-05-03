@@ -15,11 +15,7 @@ import com.example.todoapp.util.DateUtil
 import com.example.todoapp.util.DateUtil.hideKeyboard
 import com.example.todoapp.util.DateUtil.toString
 import com.example.todoapp.viewmodel.ToDoViewModel
-import com.google.android.gms.instantapps.InstantApps
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.ktx.analytics
-import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,28 +27,11 @@ class MainActivity : AppCompatActivity() {
     var title = ""
     var description = ""
 
-
-    // Firebase
-    val STATUS_INSTALLED = "installed"
-    val STATUS_INSTANT = "instant"
-    val ANALYTICS_USER_PROP = "app_type"
-    private lateinit var firebaseAnalytics: FirebaseAnalytics
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        // Obtain the FirebaseAnalytics instance.
-        firebaseAnalytics = Firebase.analytics
-
-        // Determine the current app context, either installed or instant, then
-        // set the corresponding user property for Google Analytics.
-        if (InstantApps.getPackageManagerCompat(this).isInstantApp()) {
-            firebaseAnalytics.setUserProperty(ANALYTICS_USER_PROP, STATUS_INSTANT)
-        } else {
-            firebaseAnalytics.setUserProperty(ANALYTICS_USER_PROP, STATUS_INSTALLED)
-        }
 
         adapter = ToDoAdapter(::onDeleteCLick, ::onEditClick,::onCardItemClicked)
 

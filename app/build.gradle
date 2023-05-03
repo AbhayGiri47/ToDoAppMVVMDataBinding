@@ -39,41 +39,30 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.activity:activity-ktx:1.6.1'
-    implementation 'androidx.test:core-ktx:1.4.0'
+    implementation 'androidx.activity:activity-ktx:1.7.1'
+    implementation 'androidx.test:core-ktx:1.5.0'
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     // lifecycle dependencies - viewmodel, livedata
-    def lifecycleVersion = '2.5.1'
+    def lifecycleVersion = '2.6.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
 
     // room dependencies
-    def room_version = "2.5.0"
+    def room_version = "2.5.1"
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     implementation("androidx.room:room-ktx:$room_version")
-
-
-    // google play instant
-    implementation "com.google.android.gms:play-services-instantapps:18.0.1"
-
-    // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:31.3.0')
-
-    // When using the BoM, don't specify versions in Firebase dependencies
-    implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-dynamic-links-ktx'
 
 
     /*  --------------------------Unit Testing---------------------  */
@@ -84,10 +73,9 @@ dependencies {
 
     // Coroutines
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
-
-    //
-    testImplementation 'com.squareup.okhttp3:mockwebserver:4.10.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 
     // mockito
     testImplementation 'org.mockito:mockito-core:3.6.0'
